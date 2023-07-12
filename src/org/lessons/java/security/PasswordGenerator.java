@@ -10,21 +10,29 @@ BONUS: utilizzare la classe java.util.Scanner per leggere i dati dell’utente d
 
 package org.lessons.java.security;
 
+import java.util.Scanner;
+
 public class PasswordGenerator {
     public static void main(String[] args) {
 
+        //input
+        Scanner inputInfo = new Scanner(System.in);
+        Scanner inputDate = new Scanner (System.in);
+
         //variables
-        String userName = "Pinco";
-        String userSurname = "Pallo";
-        String userColor = "magenta";
-        int birthDay = 12;
-        int birthMonth = 5;
-        int birthYear = 1994;
+        System.out.println("Enter your name, surname, and favorite color: ");
+        String userName = inputInfo.nextLine();
+        String userSurname = inputInfo.nextLine();
+        String userColor = inputInfo.nextLine();
+        System.out.println("Enter you day, month and year of birth:");
+        int birthDay = inputDate.nextInt();
+        int birthMonth = inputDate.nextInt();
+        int birthYear = inputDate.nextInt();
         int userDate = birthDay + birthMonth + birthYear;
         String generatedPassword = userName + "-" + userSurname + "-" + userColor + "-" + userDate;
 
         //print
-        System.out.println(generatedPassword);
+        System.out.println("Your generated password is: " + generatedPassword);
 
     }
 }
