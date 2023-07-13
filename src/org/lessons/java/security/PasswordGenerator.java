@@ -25,14 +25,18 @@ public class PasswordGenerator {
         String userSurname = inputInfo.nextLine();
         String userColor = inputInfo.nextLine();
         System.out.println("Enter you day, month and year of birth:");
-        int birthDay = inputDate.nextInt();
-        int birthMonth = inputDate.nextInt();
-        int birthYear = inputDate.nextInt();
+        int birthDay = Integer.parseInt(inputDate.nextLine());
+        int birthMonth = Integer.parseInt(inputDate.nextLine());
+        int birthYear = Integer.parseInt(inputDate.nextLine());
         int userDate = birthDay + birthMonth + birthYear;
         String generatedPassword = userName + "-" + userSurname + "-" + userColor + "-" + userDate;
 
         //print
         System.out.println("Your generated password is: " + generatedPassword);
+
+        //close scanner
+        inputInfo.close();
+        inputDate.close();
 
     }
 }
